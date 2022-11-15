@@ -8,10 +8,10 @@ abstract class TravelRepository {
   Future<DataResult> getAllTravelInfor();
 }
 
-class ImageRepositoryImplement implements TravelRepository {
+class TravelRepositoryImplement implements TravelRepository {
   final TravelService _travelService;
 
-  ImageRepositoryImplement(this._travelService);
+  TravelRepositoryImplement(this._travelService);
 
   @override
   Future<DataResult> insertTravel(TravelModel travel, String tableName) {

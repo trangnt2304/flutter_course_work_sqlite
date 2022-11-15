@@ -15,7 +15,7 @@ class TravelDatabase {
     },
 
         /// This version will use when you want to upgrade or downgrade the database
-        version: 1,
+        version: 2,
         singleInstance: true);
     return _database!;
   }
