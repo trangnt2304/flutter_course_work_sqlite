@@ -60,6 +60,15 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('All Trips'),
         backgroundColor: const Color(0xff4C4646),
+        actions: [
+          InkWell(
+              splashFactory: NoSplash.splashFactory,
+              onTap: () async {
+                await mainController.deleteAllTravel();
+                listTravelModel.value = mainController.listTravel;
+              },
+              child: Image.asset('assets/ic_trash_can.png'))
+        ],
       ),
       body: ValueListenableBuilder<List<TravelModel>>(
           valueListenable: listTravelModel,

@@ -38,4 +38,16 @@ class MainController {
       }
     }
   }
+
+  Future<void> deleteAllTravel() async {
+    DataResult dataResult = await _imageRepositoryImplement.deleteAllTravel();
+    if (dataResult.isSuccess) {
+      listTravel = List.empty();
+    } else {
+      if (dataResult.error is DatabaseFailure) {
+        log("Error ${(dataResult.error as DatabaseFailure).errorMessage}");
+        listTravel = List.empty();
+      }
+    }
+  }
 }

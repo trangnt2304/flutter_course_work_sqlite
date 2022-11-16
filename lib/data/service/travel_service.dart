@@ -26,4 +26,14 @@ class TravelService {
       return DataResult.failure(DatabaseFailure(ex.toString()));
     }
   }
+
+  Future<DataResult> deleteAllTravel() async {
+    try {
+      Database db = await TravelDatabase.getInstance();
+      int numberOfRowEffected = await db.delete("travel");
+      return DataResult.success(numberOfRowEffected);
+    } catch (ex) {
+      return DataResult.failure(DatabaseFailure(ex.toString()));
+    }
+  }
 }

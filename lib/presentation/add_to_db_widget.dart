@@ -148,10 +148,10 @@ class AddToDb extends StatelessWidget {
                           padding: const EdgeInsets.all(12)),
                       onPressed: () {
                         if (nameController.text.isNotEmpty &&
-                            descriptionController.text.isNotEmpty &&
                             destinationController.text.isNotEmpty &&
                             dateTime.value != 'dd/mm/yyyy' &&
-                            _valueRadioSelected.value != 3) {
+                            (_valueRadioSelected.value == 1 ||
+                                _valueRadioSelected.value == 2)) {
                           _showAlertDialog(
                             context: context,
                             isSuccess: true,

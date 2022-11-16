@@ -6,6 +6,7 @@ import 'model/travel_model.dart';
 abstract class TravelRepository {
   Future<DataResult> insertTravel(TravelModel imageUrl, String tableName);
   Future<DataResult> getAllTravelInfor();
+  Future<DataResult> deleteAllTravel();
 }
 
 class TravelRepositoryImplement implements TravelRepository {
@@ -21,5 +22,10 @@ class TravelRepositoryImplement implements TravelRepository {
   @override
   Future<DataResult> getAllTravelInfor() {
     return _travelService.getAllTravelInfor();
+  }
+
+  @override
+  Future<DataResult> deleteAllTravel() {
+    return _travelService.deleteAllTravel();
   }
 }
